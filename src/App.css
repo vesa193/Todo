@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+
+:root {
+    --font-base: 'Roboto';
+    --font-second: 'Fugaz';
+}
+
+@font-face {
+    font-family: var(--font-base);
+    font-weight: normal;
+    font-style: normal;
+    src:  url('../src/assets/fonts/roboto/Roboto-Regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: var(--font-second);
+    font-weight: normal;
+    font-style: normal;
+    src:  url('../src/assets/fonts/leckerli/LeckerliOne-Regular.ttf') format('ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-base), sans-serif;
+}
+
+ul {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    list-style: none;
+    color: rgb(22, 67, 109);
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+li.list {
+		position: relative;
+		display: flex;
+		justify-content: center;
+    list-style: none;
+    padding: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: .1em;
+    background: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: all .3s ease-in-out;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    padding: 0 15px;
+    background: rgb(190, 190, 190);
+    min-height: 100vh;
+    height: auto;
+}
+
+.transition {
+    width: 60%
+}
+
+.TodoApp {
+    width: 60%;
+    display: block;
+		margin: 0 auto;
+		margin-top: 40px;
+}
+
+.Form-todo {
+    width: 100%;
+}
+
+.Form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-wrap button {
+    background: rgb(46, 221, 113);
+    font-size: 1em;
+}
+
+.edit-wrap button:disabled {
+    background: rgb(46, 221, 113, .4);
+}
+
+.edit-wrap button:disabled:hover {
+    background: rgb(46, 221, 113, .4);
+}
+
+.edit-wrap button:hover, .edit-wrap button:focus {
+    background: #27b85e
+}
+
+input {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-right: none;
+    font-size: 1.2em;
+    transition: all .3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    background: rgb(224, 224, 224)
+}
+
+button {
+    padding: 25px;
+    border: 0;
+    background: #29c0db;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button[type="submit"] {
+    font-size: 1.2em;
+}
+
+button:hover, button:focus {
+    background: #2ba8be;
+}
+
+.header {
+    text-align: center;
+}
+
+.headline {
+    color: #eee;
+    margin: 20px 0;
+}
+
+.headline span {
+    color: rgb(155, 155, 155);
+    font-family: var(--font-second), cursive;
+}
+.headline img {
+    margin: 0 5px;
+}
+
+.headline:hover > .heart, .headline:focus > .heart {
+    animation: anim .9s infinite
+}
+
+.delete-all {
+    margin-top: 40px;
+}
+
+@keyframes anim {
+    0% {
+        transform: scale(1.6);
+        
+    }
+
+
+    100% {
+        transform: scale(1);
+         
+    }
+}
+
+.close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    opacity: 1;
+    transition: transform .3s ease-in-out;
+}
+
+.close img {
+    position: absolute;
+    top: 5px;
+    right: 5px
+}
+
+h1 {
+    color: #eee;
+    font-size: 5em;
+    margin: 40px 0;
+}
+
+.message {
+    color: rgb(160, 15, 15);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.label-checkbox {
+    position: absolute;
+    width: 80px;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-checkbox input {
+    display: none;
+    position: relative;
+    z-index: -9999;
+}
+
+.label-checkbox span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url("../src/unchecked.png");
+    cursor: pointer;
+}
+
+.label-checkbox input:checked + span {
+    background: url("../src/checked.png");
+}
+
+::-webkit-input-placeholder { 
+    color: #444;
+    font-style: italic;
+  }
+  ::-moz-placeholder { 
+    color: #444;
+    font-style: italic;
+  }
+  :-ms-input-placeholder { 
+    color: #444;
+    font-style: italic;
+  }
+  :-moz-placeholder { 
+    color: #444;
+    font-style: italic;
+  }
+
+.box-of-icons {
+    margin-top: 20px;
+}
+
+.date {
+    display: flex;
+    position: absolute;
+    width: auto;
+    bottom: 10px;
+    left: 10px;
+    color: #212121;
+    font-size: .9em;
+    font-weight: 300;
+}
+
+.date img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px
+}
+
+.edit {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.flip {
+    width: 100%
+}
+
+.error {
+    color: rgb(221, 64, 64);
+    margin: 20px 0;
+}
+
+li.checkbox-wrap {
+  margin: 20px 0;
+}
+
+div.checkbox.checkbox-success {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+div.checkbox.checkbox-success > input {
+	width: 100%;
+	height: 100%;
+}
+
+.centered {
+  width: 300px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  color: #4571ec;
+}
+
+@media screen and (max-width: 601px) {
+
+    .list {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		background-color: lightblue;
+	}
+
+	.App {
+			padding: 0 15px;
+	}
+
+	.Form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;   
+	}
+
+	.Form > input {
+			border: 1px solid #ccc;
+	}
+	
+	button[type="submit"] {
+			width: 100%;
+			margin-top: 10px;
+			padding: 20px;
+	}
+
+	.edit-wrap {
+			display: flex;
+			justify-content: center;
+	}
+
+	.error {
+			text-align: center;
+	}
+	
+	.headline {
+			text-align: center;
+	}
+
+	.TodoApp {
+			width: 100%
+	}
+	.transition {
+			width: 100%
+	}
+
+	.list {
+			width: 100%;
+	}
+	input {
+			width: 100%;
+	}
+
+	.edit-wrap > input {
+			width: 60%;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.edit-wrap input {
+			width: 50%;
+	}
+}
